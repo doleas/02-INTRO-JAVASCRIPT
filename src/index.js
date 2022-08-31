@@ -1,20 +1,19 @@
-//desestructuracion de arreglos
-const personajes = ['Goku', 'Vegeta', 'Trunks'];
-console.log(personajes[0]);
-console.log(personajes[1]);
-console.log(personajes[2]);
+//import, export y funciones comunes de arreglos
 
-//desestructuramos, con f2 o fn+f2 cambia la variable en todo el archivo
-const [ , ,p3 ] = personajes;
-console.log( p3 );
+import { heroes } from './data/heroes';
 
-//vamos a crearnos una funcion
-const retornaArreglo = () => {
-    return [ 'ABC', 123 ];
+//  import { heroes } from './data/heroes';
+//hay varias formas de tener un acceso rápido
+// import {heroes} from './data/heroes'
+
+//el find recibe una funcion como argumento que comunmente se llama callback
+const getHeroeById = (id) => {
+    return heroes.find(heroe => heroe.id === id);
 }
-
-const arr = retornaArreglo();
-console.log(arr);
-
-const [letras, numeros] = retornaArreglo();
-console.log(letras, numeros);
+console.log(getHeroeById(1));
+//el find recibe una funcion como argumento que comunmente se llama callback ( heroe )
+const getHeroeById1 = (id) => {
+    return heroes.find( ( heroe ) => heroe.id === id );
+}
+ 
+console.log(getHeroeById1(2));
